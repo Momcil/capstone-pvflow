@@ -1,18 +1,21 @@
 {
-  "name": "capstone-pvflow",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "server": "cd server && npm start",
-    "client": "cd client && npm start",
-    "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "build": "cd client && npm run build",
-    "install:all": "npm install && cd client && npm install && cd ../server && npm install"
-  },
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "concurrently": "^7.1.0"
-  }
+    "name": "capstone-pvflow",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "server": "cd server && npm start",
+        "client": "cd client && npm start",
+        "dev": "concurrently \"npm run server\" \"npm run client\"",
+        "build": "cd client && npm run build",
+        "install:all": "npm install && cd client && npm install && cd ../server && npm install"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "concurrently": "^7.1.0"
+    },
+    "devDependencies": {
+        "prettier": "2.6.2"
+    }
 }
