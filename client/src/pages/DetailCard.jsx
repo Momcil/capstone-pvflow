@@ -1,4 +1,4 @@
-
+import styled from "styled-components";
 
 const AllProjects = [
     {
@@ -45,16 +45,16 @@ function ShowAllProjects(){
         <>
             <h1>Projects List</h1>
             {AllProjects.map((project) => 
-                <ul>
+                <ProjectCard >
                     <li key={project.ID}>
                         <p>Project ID: {project.ID}</p>
                         <p>Client: {project.client}</p>
                         <p>Status: {project.status}</p>
-                        <p>Employee: {project.employee_name} --> Epmloyee lork-hours: {project.work_hours}</p>
+                        <p>Employee: {project.employee_name} Epmloyee lork-hours: {project.work_hours}</p>
                         <p>Start date: {project.start_date} End date: {project.end_date}</p>
                         <p>Sum of work-hours: {project.sum_hours}</p>
                     </li>
-                </ul>
+                </ProjectCard >
 
             )}     
         </>
@@ -62,3 +62,16 @@ function ShowAllProjects(){
 }    
 
 export default ShowAllProjects
+
+
+const ProjectCard = styled.ul`
+    text-align: center ;
+    border: 2px solid green;
+    border-radius: 5px;
+    color: #489CB7;
+    list-style-type: none;
+    margin: 1em 0;
+    padding: 0;
+    padding-right: 2%;
+    
+`
