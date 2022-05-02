@@ -1,8 +1,8 @@
 import styled from "styled-components";
-import allProjects from "../db";
 
 
-function ShowAllProjects(){
+
+function ShowAllProjects({allProjects}){
     
     return (
         <>
