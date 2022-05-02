@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import ShowAllProjects from './pages/DetailCard';
+import ShowAllProjects from './components/ShowAllProjects';
 
 function App() {
     return (
