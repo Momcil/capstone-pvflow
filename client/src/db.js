@@ -8,7 +8,7 @@ const allProjects = [
         work_hours: 5, 
         start_date: "10-01_22",
         end_date: "10-02-22",
-        sum_hours:5,
+        sum_hours: 5,
         in_detail: false
     },
     {
@@ -20,7 +20,7 @@ const allProjects = [
         work_hours: [2], 
         start_date: "10-01_22",
         end_date: "10-02-22",
-        sum_hours:20,
+        sum_hours: 20,
         in_detail: false
     },
     {
@@ -32,7 +32,7 @@ const allProjects = [
         work_hours: 5, 
         start_date: "10-01_22",
         end_date: "10-02-22",
-        sum_hours:10,
+        sum_hours: 10,
         in_detail: false
     }
 ]
