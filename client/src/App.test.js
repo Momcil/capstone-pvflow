@@ -10,7 +10,7 @@ test('it check SchowMore component', async () => {
     const showMore = screen.getAllByText(/show more/i)[0]
     fireEvent.click(showMore)
     await waitFor(() => screen.getByText(/employee/i))
-    expect(screen.getByRole('paragraph')).toHaveTextContent('Anton')
+    expect(screen.getByText(/employee/i)).toHaveTextContent('Anton')
     const close = screen.getByText(/close/i)
     fireEvent.click(close)
 });
