@@ -10,5 +10,7 @@ test('it check onClick show more button', async () => {
     fireEvent.click(showMore)
     await waitFor(() => screen.getByText(/employee/i))
     const close = screen.getByText(/close/i)
+    expect(screen.getByText(/employee/i)).toHaveTextContent('Anton');
     fireEvent.click(close)
+    
 });
