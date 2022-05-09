@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { useState } from "react";
-import MyButton from "./button/MyButton";
+import MyButton from "../button/MyButton";
+
 
 
 
@@ -11,16 +12,15 @@ export default function ShowAllProjects({allProjects}){
         const newDetails = [...allProjects]
         newDetails[projectID].in_detail = newDetails[projectID].in_detail ? false : true
         setDetails(newDetails)
-        console.log(newDetails)
     }
  
     return (
         <>
             <h1>Projects List</h1>
             <Container> 
-                {allProjects.map((project) =>    
+                {allProjects.map((project, index) =>    
                     project.in_detail ?            
-                    <ProjectCard role="list" key={project.ID}>
+                    <ProjectCard role="list" key={index}>
                         <p>Project ID: {project.ID}</p>
                         <p>Client: {project.client}</p>
                         <p>Status: {project.status}</p>
@@ -28,16 +28,16 @@ export default function ShowAllProjects({allProjects}){
                         <p>Start date: {project.start_date}</p>
                         <p> End date: {project.end_date}</p>
                         <p>Sum of work-hours: <span>{project.sum_hours}</span></p>
-                        <MyButton id={project.ID} onClick={() => Toggle(project.ID - 1)}>
+                        <MyButton id={project.ID} onClick={() => Toggle(project.ID -1)}>
                                 {project.in_detail ? "close" : "show more"}
                         </MyButton>
                     </ProjectCard> 
                     :
-                    <ProjectCard role="list" key={project.ID}>
+                    <ProjectCard role="list" key={index}>
                         <p>Project ID: {project.ID}</p> 
                         <p>Client: {project.client}</p>
                         <p>Status: {project.status}</p>
-                        <MyButton id={project.ID} onClick={() => Toggle(project.ID - 1)}>
+                        <MyButton id={project.ID} onClick={() => Toggle(project.ID -1)}>
                                 {project.in_detail ? "close" : "show more"}
                         </MyButton>
                     </ProjectCard> 
