@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
-const MyButton = styled.button`
+const ShowMoreButton = styled.button`
     background-color: #351c47;
     color: white;
+    margin-bottom: 1em;
 `
-export default MyButton 
+export default ShowMoreButton 
