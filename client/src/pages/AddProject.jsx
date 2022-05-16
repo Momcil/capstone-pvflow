@@ -1,14 +1,10 @@
 import { useState } from "react"
 import styled from 'styled-components'
 import { Link } from "react-router-dom"
-import allProjects from '../db'
+import BackToProjectList from '../components/NavToProjectListButton'
 
-const NewProject = styled.form`
-    max-width: 80%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-`
+
+
 
 function AddProject({addNewPr}){
     const [ID, setId] = useState("")
@@ -19,7 +15,9 @@ function AddProject({addNewPr}){
     // const [work_hours, setWorkHours] = useState("")
     const [start_date, setStartDate] = useState("")
     const [end_date, setEndDate] = useState("")
+
     // const [sum_hours, setSumHours] = useState([])
+
     
     return(
         <>
@@ -91,9 +89,9 @@ function AddProject({addNewPr}){
                         setEndDate(event.target.value)
                     }}>
                 </input>
-                <button>all projects</button>          
+                <button>create new project</button>          
             </NewProject>
-            <Link to="/allProjects">Bact to project list</Link>
+            <Link to="/allProjects"><BackToProjectList>back to projectlist</BackToProjectList></Link>
         </>
     )
 }
@@ -103,3 +101,26 @@ function AddProject({addNewPr}){
 
 
 export default AddProject
+
+const NewProject = styled.form`
+    font-family: sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+    height: 90vh;
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+    background-color: #f8f9fd;
+  
+  input[type="text"],
+  input[type="password"] {
+    height: 25px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+  }
+  input[type="submit"]:hover {
+    background: #6cf0c2;
+  }
+`
+
+

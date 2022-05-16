@@ -3,11 +3,11 @@ import ShowAllProjects from "../components/showAllProjects/ShowAllProjects";
 import styled from "styled-components";
 import AddProject from "./AddProject";
 
-const AllProjects = ({allProjects}) => {
+const AllProjects = ({allProjects, deleteProject}) => {
     return (
         <Container>
             <Link to='/addproject'><button>add new project</button></Link>
-            <ShowAllProjects allProjects={allProjects}/>
+            <ShowAllProjects allProjects={allProjects} deleteProject={deleteProject} />
         </Container>
     )
 }
