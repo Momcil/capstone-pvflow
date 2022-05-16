@@ -3,7 +3,7 @@ const allProjects = [
         ID: 1,
         project_name: "1st Project",
         client: "1st Client",
-        status: "In progress",
+        status: "In prog    ress",
         employee_name: "Anton",
         work_hours: 5, 
         start_date: "10-01_22",

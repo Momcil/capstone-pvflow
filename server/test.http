@@ -1,0 +1,22 @@
+GET http://localhost:4500/allProjects HTTP/1.1
+
+###
+
+POST http://localhost:4500/allProjects HTTP/1.1
+Content-Type: application/json
+
+{
+        "ID": 3,
+        "project_name": "1st Project",
+        "client": "3rd Client",
+        "status": "Done",
+        "employee_name": "Anton",
+        "work_hours": 5, 
+        "start_date": "10-01-22",
+        "end_date": "10-02-22",
+        "sum_hours": 10,
+        "in_detail": false
+    }
+###
+
+DELETE http://localhost:4500/allProjects/627a28876746d463cf056d2f HTTP/1.1
