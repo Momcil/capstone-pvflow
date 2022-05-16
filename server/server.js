@@ -6,6 +6,8 @@ require('dotenv').config()
 const port = process.env.PORT || 4500
 const {MONGODB_URL} = process.env
 
+const WorkHours = require("./models/workHoursModel")
+
 
 mongoose.connect(MONGODB_URL).then(() => {    
     console.log("Server Connected to MongoDb")

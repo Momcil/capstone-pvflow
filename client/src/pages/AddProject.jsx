@@ -30,7 +30,7 @@ function AddProject({addNewPr}){
                     placeholder="insert project id"
                     required
                     value={ID}
-                    onChange={(event) =>{
+                    onChange={(event) => {
                         setId(event.target.value)
                     }}>
                 </input>
@@ -89,9 +89,10 @@ function AddProject({addNewPr}){
                         setEndDate(event.target.value)
                     }}>
                 </input>
-                <button>create new project</button>          
+                <button>create new project</button> 
+                <Link to="/allProjects"><BackToProjectList>back to projectlist</BackToProjectList></Link>
+         
             </NewProject>
-            <Link to="/allProjects"><BackToProjectList>back to projectlist</BackToProjectList></Link>
         </>
     )
 }
@@ -109,18 +110,16 @@ const NewProject = styled.form`
     justify-content: center;
     flex-direction: column;
     gap: 20px;
-    height: 90vh;
+    height: 100vh;
     font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-    background-color: #f8f9fd;
-  
-  input[type="text"],
-  input[type="password"] {
+    background-color: white;
+    padding: 2rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);  
+    input {
     height: 25px;
     border: 1px solid rgba(0, 0, 0, 0.2);
-  }
-  input[type="submit"]:hover {
-    background: #6cf0c2;
-  }
+    }
+  
 `
 
 

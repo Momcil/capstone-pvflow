@@ -31,7 +31,7 @@ function Login() {
       //Prevent page reload
       event.preventDefault();
   
-      var { uname, pass } = document.forms[0];
+      const { uname, pass } = document.forms[0];
   
       // Find user login info
       const userData = database.find((user) => user.username === uname.value);
