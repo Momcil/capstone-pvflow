@@ -18,11 +18,11 @@ export default function ShowAllProjects({allProjects, deleteProject}){
  
     return (
         <>
-            <h1>Projects List</h1>
+            <H2>Projects List</H2>
             <Container> 
                 {allProjects.map((project, index) =>    
                     project.in_detail ?            
-                    <ProjectCard role="list" key={index}>
+                    <ProjectCard role="list" key={index}><H2>Projects List</H2>
                         <p>Project ID: {project.ID}</p>
                         <BackToProjectList onClick={() => deleteProject(project)}>DELETE PROJECT</BackToProjectList>
                         <p>Project name: {project.project_name}</p>
@@ -44,7 +44,7 @@ export default function ShowAllProjects({allProjects, deleteProject}){
                         <p>Client: {project.client}</p>
                         <p>Status: {project.status}</p>
                         <Button id={project.ID} onClick={() => Toggle(index)}>
-                                {project.in_detail ? "close" : "show more"}
+                            {project.in_detail ? "close" : "show more"}
                         </Button>
                     </ProjectCard> 
                 )}  
@@ -60,10 +60,11 @@ const ProjectCard = styled.li`
     text-align: center ;
     border: 2px solid #489CB7;
     border-radius: 5px;
-    color: #489CB7;
+    color: #351c47;
     margin: 1em 0;
     padding-right: 1%;
     list-style-type: none;
+    font-size: 1.5rem;
     font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     
@@ -72,12 +73,6 @@ const ProjectCard = styled.li`
         padding: 0.2em ;
         font-size: 1.2rem ;
     }
-    /* button{
-        font-size: 1.2rem;
-        
-        font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    } */
 `
 
 const Container = styled.ul`
@@ -86,12 +81,8 @@ const Container = styled.ul`
     background-color: white;
     padding: 2rem;
 `
-
-const NavButton = styled.button`
-    background-color: indianred;
-    color: white;
-    margin-bottom: 1em;
-    font-size: 1.5rem;
+const H2 = styled.h2`
     font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 `
+

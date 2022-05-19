@@ -5,10 +5,7 @@ const projectsSchema = mongoose.Schema({
     project_name: { type: String, require: true},
     client: { type: String, required: true },
     status: { type: String, require: true },
-    employee: [{
-      name: String,
-      work_hours: Number
-    }],
+    employee_name: { type: String, require: true },
     work_hours: {type: Number, default: 0 },
     start_date: { type: Date },
     end_date: { type: Date },

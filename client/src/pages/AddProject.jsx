@@ -2,7 +2,7 @@ import { useState } from "react"
 import styled from 'styled-components'
 import { Link } from "react-router-dom"
 import BackToProjectList from '../components/NavToProjectListButton'
-
+import Button from '../components/button/ShowMoreButton'
 
 
 
@@ -89,9 +89,8 @@ function AddProject({addNewPr}){
                         setEndDate(event.target.value)
                     }}>
                 </input>
-                <button>create new project</button> 
-                <Link to="/allProjects"><BackToProjectList>back to projectlist</BackToProjectList></Link>
-         
+                <Button>create new project</Button> 
+                <Link to="/allProjects" className="backToProjectsList"><BackToProjectList>back to projectlist</BackToProjectList></Link>
             </NewProject>
         </>
     )
@@ -104,12 +103,11 @@ function AddProject({addNewPr}){
 export default AddProject
 
 const NewProject = styled.form`
-    font-family: sans-serif;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    gap: 20px;
+    gap: 10px;
     height: 100vh;
     font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
     background-color: white;
@@ -119,7 +117,26 @@ const NewProject = styled.form`
     height: 25px;
     border: 1px solid rgba(0, 0, 0, 0.2);
     }
-  
+    .backToProjectsList{
+    background-color: #351c47;
+    color: white;
+    margin-bottom: 1em;
+    font-size: 1.2rem;
+    padding : 0.1em;
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+    input{
+        text-align: center ;
+    border: 2px solid #489CB7;
+    border-radius: 5px;
+    color: #489CB7;
+    margin: 1em 0;
+    padding-right: 1%;
+    list-style-type: none;
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
 `
 
 

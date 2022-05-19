@@ -1,11 +1,9 @@
+const mongoose = require('mongoose');
+const workHoursScheema = mongoose.Schema({
+    workinkg_hours: Number,
+    project_id: Number,
+    employee_name: String,
+    date: Date,
+});
 
-const mongoose = require("mongoose")
-const workHoursShcema = mongoose.Shchema({
-        workink_hours: Number,
-       project_id: Number,
-       employee_name: String
-    })
-
-    module.exports = mongoose.model("workHours", workHoursShcema)
-//----------------------------
-
+module.exports = new mongoose.model('work_Hours', workHoursScheema);
