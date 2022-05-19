@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { useState } from "react";
-import ShowMoreButton from "../button/ShowMoreButton";
-
+import Button from "../button/ShowMoreButton";
+import BackToProjectList from "../button/ShowMoreButton";
 
 
 
@@ -18,13 +18,13 @@ export default function ShowAllProjects({allProjects, deleteProject}){
  
     return (
         <>
-            <h1>Projects List</h1>
+            <H2>Projects List</H2>
             <Container> 
                 {allProjects.map((project, index) =>    
                     project.in_detail ?            
-                    <ProjectCard role="list" key={index}>
+                    <ProjectCard role="list" key={index}><H2>Projects List</H2>
                         <p>Project ID: {project.ID}</p>
-                        <button onClick={() => deleteProject(project)}>DELETE PROJECT</button>
+                        <BackToProjectList onClick={() => deleteProject(project)}>DELETE PROJECT</BackToProjectList>
                         <p>Project name: {project.project_name}</p>
                         <p>Client: {project.client}</p>
                         <p>Status: {project.status}</p>
@@ -32,9 +32,9 @@ export default function ShowAllProjects({allProjects, deleteProject}){
                         <p>Start date: {project.start_date}</p>
                         <p> End date: {project.end_date}</p>
                         <p>Sum of work-hours: <span>{project.sum_hours}</span></p>
-                        <ShowMoreButton id={project.ID} onClick={() => Toggle(index)}>
+                        <Button id={project.ID} onClick={() => Toggle(index)}>
                                 {project.in_detail ? "close" : "show more"}
-                        </ShowMoreButton>
+                        </Button>
                     </ProjectCard> 
                     :
                     <ProjectCard role="list" key={index}>
@@ -43,9 +43,9 @@ export default function ShowAllProjects({allProjects, deleteProject}){
                         {/* <button onClick={() => deleteProject(project)}>delete</button> */}
                         <p>Client: {project.client}</p>
                         <p>Status: {project.status}</p>
-                        <ShowMoreButton id={project.ID} onClick={() => Toggle(index)}>
-                                {project.in_detail ? "close" : "show more"}
-                        </ShowMoreButton>
+                        <Button id={project.ID} onClick={() => Toggle(index)}>
+                            {project.in_detail ? "close" : "show more"}
+                        </Button>
                     </ProjectCard> 
                 )}  
             </Container> 
@@ -60,20 +60,29 @@ const ProjectCard = styled.li`
     text-align: center ;
     border: 2px solid #489CB7;
     border-radius: 5px;
-    color: #489CB7;
+    color: #351c47;
     margin: 1em 0;
     padding-right: 1%;
     list-style-type: none;
+    font-size: 1.5rem;
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    
     span{
         border: 2px solid green;
         padding: 0.2em ;
         font-size: 1.2rem ;
     }
-    button{
-        font-size: 1.2rem;
-    }
 `
 
 const Container = styled.ul`
     padding-left: 0;
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+    background-color: white;
+    padding: 2rem;
 `
+const H2 = styled.h2`
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+    text-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+`
+
