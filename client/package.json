@@ -50,6 +50,10 @@
   },
   "proxy": "http://localhost:4500",
   "server": "nodemon index.js --ignore client",
-  "client": "npm start --prefix client"
+  "client": "npm start --prefix client",
+  "devDependencies": {
+    "react-scripts-svg": "^0.1.4-b3"
+  }
+
 }
 
