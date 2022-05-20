@@ -107,7 +107,6 @@ const NewProject = styled.form`
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    gap: 10px;
     height: 100vh;
     font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
     background-color: white;
