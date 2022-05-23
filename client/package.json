@@ -14,10 +14,10 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "NODE_ENV=production node_modules/react-scripts/bin/react-scripts.js start",
-    "build": "NODE_ENV=production node_modules/react-scripts/bin/react-scripts.js build",
-    "test": "NODE_ENV=production node_modules/react-scripts/bin/react-scripts.js test",
-    "eject": "NODE_ENV=production node_modules/react-scripts/bin/react-scripts.js eject",
+    "start": "NODE_ENV=production node node_modules/react-scripts/bin/react-scripts.js start",
+    "build": "NODE_ENV=production node node_modules/react-scripts/bin/react-scripts.js build",
+    "test": "NODE_ENV=production node node_modules/react-scripts/bin/react-scripts.js test",
+    "eject": "NODE_ENV=production node node_modules/react-scripts/bin/react-scripts.js eject",
     "build-storybook": "build-storybook -s public"
   },
   "eslintConfig": {
