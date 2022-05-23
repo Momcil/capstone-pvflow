@@ -55,7 +55,6 @@ function App() {
         })
             .then(res => res.json(), console.log(newProjectList))
             .then(data => {
-                console.log('data', data);
                 setNewProject(newProject => {
                     console.log('newProject', newProject);
                     return newProject.concat(data);
