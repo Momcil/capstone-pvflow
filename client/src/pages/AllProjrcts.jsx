@@ -32,10 +32,13 @@ const Container = styled.div`
     h1{
         font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);  
-        padding: 1em;
+        padding: .5em;
         font-size: 2.5rem;
         border: 2px solid #489CB7;
         border-radius: 5px;
+        display: inline-block;
+        text-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
     }
 `
 

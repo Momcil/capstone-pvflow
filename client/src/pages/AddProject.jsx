@@ -90,7 +90,7 @@ function AddProject({addNewPr}){
                     }}>
                 </input>
                 <Button>create new project</Button> 
-                <Link to="/allProjects" className="backToProjectsList"><BackToProjectList>back to projectlist</BackToProjectList></Link>
+                <Link to="/allProjects" className="backToProjectsList"><BackToProjectList>BACk to Projectlist</BackToProjectList></Link>
             </NewProject>
         </>
     )
@@ -112,10 +112,7 @@ const NewProject = styled.form`
     background-color: white;
     padding: 2rem;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);  
-    input {
-    height: 25px;
-    border: 1px solid rgba(0, 0, 0, 0.2);
-    }
+
     .backToProjectsList{
     background-color: #351c47;
     color: white;
@@ -135,6 +132,15 @@ const NewProject = styled.form`
     list-style-type: none;
     font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+    h1{
+        font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);  
+        padding: .5em;
+        font-size: 2rem;
+        border: 2px solid #489CB7;
+        border-radius: 5px;
+        display: inline-block;
     }
 `
 

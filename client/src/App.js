@@ -10,7 +10,7 @@ function App() {
     const [newProject, setNewProject] = useState([]);
     const [employee, setEmployee] = useState([]);
 
-    console.log(employee);
+    // const  {employee_name, work_hours } = employee
 
     useEffect(() => {
         fetch('/allProjects')
@@ -44,6 +44,7 @@ function App() {
             sum_hours,
             in_detail: false,
         };
+        console.log(newProjectList.employee_name, 'name');
 
         fetch('/allProjects', {
             method: 'POST', // or "PUT"
@@ -52,7 +53,7 @@ function App() {
             },
             body: JSON.stringify(newProjectList),
         })
-            .then(res => res.json())
+            .then(res => res.json(), console.log(newProjectList))
             .then(data => {
                 console.log('data', data);
                 setNewProject(newProject => {
@@ -75,11 +76,12 @@ function App() {
         });
     }
 
-    function AddWorkersInformation({ employee_name, working_hours, project_id, date }) {
-        const updateStatus = { employee_name, working_hours, project_id, date };
+    function AddWorkersInformation({ employee_name, work_hours, project_id, date }) {
+        const updateStatus = { employee_name, work_hours, project_id, date };
+        console.log(updateStatus);
 
-        fetch('/update', {
-            method: 'POST', // or "PUT"
+        fetch(`/update/${employee_name._id}`, {
+            method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
@@ -89,8 +91,8 @@ function App() {
             .then(data => {
                 console.log('data', data);
                 setEmployee(updateStatus => {
-                    console.log('setEmployee', updateStatus);
-                    return updateStatus.concat(data);
+                    console.log('update Status', updateStatus);
+                    return employee.concat(data);
                 });
             });
     }
@@ -98,10 +100,7 @@ function App() {
     return (
         <div className="App">
             <Routes>
-                <Route
-                    path="/update"
-                    element={<UpdateStatus updateINFO={AddWorkersInformation} />}
-                />
+                <Route path="/update" element={<UpdateStatus update={AddWorkersInformation} />} />
                 <Route path="/" element={<LoginPage />} />
                 <Route path="/addproject" element={<AddProject addNewPr={NewProjectToDb} />} />
                 <Route

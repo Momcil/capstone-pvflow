@@ -6,7 +6,6 @@ function UpdateStatus({updateINFO}){
     return (
         <>
             <UpdateWorkSattus updateINFO={updateINFO}/>
-            <Link to="/">log out</Link>
         </>
     )
     
