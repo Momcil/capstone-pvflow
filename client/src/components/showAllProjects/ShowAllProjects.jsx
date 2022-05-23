@@ -10,7 +10,7 @@ export default function ShowAllProjects({allProjects, deleteProject}){
     function Toggle(projectID) {
         const newDetails = [...allProjects]
         newDetails[projectID].in_detail = newDetails[projectID].in_detail ? false : true
-        setDetails(newDetails)
+        // setDetails(newDetails)
     }
 
     
