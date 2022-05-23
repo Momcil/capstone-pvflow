@@ -5,7 +5,7 @@ import DeleteButton from "../button/DeleteButton";
 
 
 export default function ShowAllProjects({allProjects, deleteProject}){
-    const [details, setDetails] = useState([])
+    // const [details, setDetails] = useState([])
 
     function Toggle(projectID) {
         const newDetails = [...allProjects]

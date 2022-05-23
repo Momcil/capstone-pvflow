@@ -44,6 +44,16 @@ function UpdateWorkSattus({updateINFO}){
                 }}
                 > 
                 </input>
+                <label htmlFor="name">Work hours:{date}</label>
+                <input id="date"
+                name="date"
+                plaseholder="insert date"
+                value={date}
+                onChange={(event) => {
+                    setDate(event.target.value)
+                }}
+                > 
+                </input>
                 <Button>submit</Button>
                 <Link to="/" className='logout'>log out</Link>
             </NewProject>
