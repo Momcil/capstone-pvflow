@@ -1,17 +1,16 @@
 import styled from "styled-components";
-import { useState } from "react";
+// import { useState } from "react";
 import Button from "../button/ShowMoreButton";
-import BackToProjectList from "../button/ShowMoreButton";
-
+import DeleteButton from "../button/DeleteButton";
 
 
 export default function ShowAllProjects({allProjects, deleteProject}){
-    const [details, setDetails] = useState([])
+    // const [details, setDetails] = useState([])
 
     function Toggle(projectID) {
         const newDetails = [...allProjects]
         newDetails[projectID].in_detail = newDetails[projectID].in_detail ? false : true
-        setDetails(newDetails)
+        // setDetails(newDetails)
     }
 
     
@@ -24,7 +23,7 @@ export default function ShowAllProjects({allProjects, deleteProject}){
                     project.in_detail ?            
                     <ProjectCard role="list" key={index}><H2>Projects List</H2>
                         <p>Project ID: {project.ID}</p>
-                        <BackToProjectList onClick={() => deleteProject(project)}>DELETE PROJECT</BackToProjectList>
+                        <DeleteButton onClick={() => deleteProject(project)}>DELETE PROJECT</DeleteButton>
                         <p>Project name: {project.project_name}</p>
                         <p>Client: {project.client}</p>
                         <p>Status: {project.status}</p>

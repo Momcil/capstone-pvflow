@@ -74,7 +74,7 @@ app.delete('/allProjects/:projectId', (req, res, next) => {
         });
 });
 
-app.post('/update', (req, res, next) => {
+app.post('/update/:id', (req, res, next) => {
     const workinkg_hours = req.body.working_hours;
     const project_id = req.body.project_id;
     const date = req.body.date;
@@ -89,3 +89,17 @@ app.post('/update', (req, res, next) => {
             next(err);
         });
 });
+
+app.get('/update/:hoursId', (req, res, next) => {
+    const id = req.params.hoursId;
+    WorkHours.findById(id)
+        .then(data => {
+            console.log(data, 'data');
+            res.status(201).send(id);
+        })
+        .catch(err => {
+            next(err);
+        });
+});
+
+module.exports = app;

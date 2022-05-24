@@ -1,12 +1,11 @@
 import UpdateWorkSattus from "../components/WorkerUpdate"
-import { Link } from "react-router-dom"
 
-function UpdateStatus({updateINFO}){
+
+function UpdateStatus({update}){
 
     return (
         <>
-            <UpdateWorkSattus updateINFO={updateINFO}/>
-            <Link to="/">log out</Link>
+            <UpdateWorkSattus update={update}/>
         </>
     )
     
