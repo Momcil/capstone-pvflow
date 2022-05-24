@@ -12,5 +12,7 @@ test('it check SchowMore component', async () => {
     await waitFor(() => screen.getByText(/employee/i))
     expect(screen.getByText(/employee/i)).toHaveTextContent('Anton')
     const close = screen.getByText(/close/i)
+    expect(screen.getByText(/employee/i)).toHaveTextContent('Anton');
     fireEvent.click(close)
+    
 });
