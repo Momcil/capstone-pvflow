@@ -3,19 +3,20 @@ import { useState } from 'react'
 import styled from 'styled-components'
 import Button from "./button/ShowMoreButton";
 
-function UpdateWorkSattus({updateINFO}){
+function UpdateWorkSattus({update, employee}){
+    console.log(employee)
     const [employee_name, setEmployeeNmae] = useState("")
     console.log(employee_name)
     const [working_hours, setWorkHours] = useState("")
     const [date, setDate] = useState("")
     const [project_id, setProject_Id] = useState("")
 
-
     return (
         <>
-            <NewProject onSubmit={(event) => {event.preventDefault(); updateINFO({employee_name, working_hours, date, project_id})}}>
+            <UpdateProject onSubmit={(event) => {event.preventDefault(); update({employee_name, working_hours, date, project_id})}}>
             <label htmlFor="name">Project ID:{project_id}</label>
-                <input id="id"
+                <input type="number"
+                 id="id"
                 name="id"
                 plaseholder="insert project ID"
                 value={project_id}
@@ -24,7 +25,8 @@ function UpdateWorkSattus({updateINFO}){
                 }}
                 > 
                 </input>
-                <label htmlFor="name">Add your name:{employee_name}</label>
+                <label type="text" 
+                htmlFor="name">Your name:{employee_name}</label>
                 <input id="name"
                 name="name"
                 plaseholder="insert name"
@@ -34,8 +36,9 @@ function UpdateWorkSattus({updateINFO}){
                 }}
                 > 
                 </input>
-                <label htmlFor="name">Work hours:{working_hours}</label>
-                <input id="hours"
+                <label htmlFor="hours">Work hours:{working_hours}</label>
+                <input type="number" 
+                id="hours"
                 name="hours"
                 plaseholder="insert work hours"
                 value={working_hours}
@@ -44,8 +47,9 @@ function UpdateWorkSattus({updateINFO}){
                 }}
                 > 
                 </input>
-                <label htmlFor="name">Work hours:{date}</label>
-                <input id="date"
+                <label htmlFor="date">Date:{date}</label>
+                <input type="date" 
+                id="date"
                 name="date"
                 plaseholder="insert date"
                 value={date}
@@ -56,7 +60,7 @@ function UpdateWorkSattus({updateINFO}){
                 </input>
                 <Button>submit</Button>
                 <Link to="/" className='logout'>log out</Link>
-            </NewProject>
+            </UpdateProject>
         </>
     )
 }
@@ -65,7 +69,7 @@ function UpdateWorkSattus({updateINFO}){
 export default UpdateWorkSattus
 
 
-const NewProject = styled.form`
+const UpdateProject = styled.form`
     font-family: sans-serif;
     display: flex;
     align-items: center;

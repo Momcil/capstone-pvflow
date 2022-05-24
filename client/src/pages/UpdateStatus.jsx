@@ -1,11 +1,11 @@
 import UpdateWorkSattus from "../components/WorkerUpdate"
 
 
-function UpdateStatus({updateINFO}){
+function UpdateStatus({update}){
 
     return (
         <>
-            <UpdateWorkSattus updateINFO={updateINFO}/>
+            <UpdateWorkSattus update={update}/>
         </>
     )
     

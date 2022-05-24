@@ -10,8 +10,6 @@ function App() {
     const [newProject, setNewProject] = useState([]);
     const [employee, setEmployee] = useState([]);
 
-    // const  {employee_name, work_hours } = employee
-
     useEffect(() => {
         fetch('/allProjects')
             .then(res => res.json())
@@ -75,7 +73,7 @@ function App() {
         });
     }
 
-    function AddWorkersInformation({ employee_name, work_hours, project_id, date }) {
+    function addWorkersInformation({ employee_name, work_hours, project_id, date }) {
         const updateStatus = { employee_name, work_hours, project_id, date };
         console.log(updateStatus);
 
@@ -99,7 +97,10 @@ function App() {
     return (
         <div className="App">
             <Routes>
-                <Route path="/update" element={<UpdateStatus update={AddWorkersInformation} />} />
+                <Route
+                    path="/update"
+                    element={<UpdateStatus update={addWorkersInformation} employee={employee} />}
+                />
                 <Route path="/" element={<LoginPage />} />
                 <Route path="/addproject" element={<AddProject addNewPr={NewProjectToDb} />} />
                 <Route
